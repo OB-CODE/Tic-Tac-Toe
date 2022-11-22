@@ -20,4 +20,18 @@ allSquares.addEventListener('click', function (event) {
     }
 })
 //Design logic for winning & visually display which player won.
-// how to access the classList: document.querySelector('.bN5').classList[1]
+// how to access the classList: document.querySelector('#square5')
+    // Squares changed to IDs in order to use class for the scoring system and resetting the game. 
+
+// Play again button
+let playAgain = document.querySelector('.clickPlayAgain')
+playAgain.addEventListener('click', function(event) {
+    children = allSquares.querySelectorAll(':scope > div')
+    for (let i = 0; 0 <9; i++) {
+        children[i].removeAttribute('class')
+    }
+})
+
+
+// children[0].removeAttribute('class')
+// children.classList

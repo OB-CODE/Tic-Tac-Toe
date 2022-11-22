@@ -4,6 +4,9 @@ First major project to showcase commits - 2 days to complete functioning game.
  ---
 ## :page_facing_up: About
 
+## :fishing_pole_and_fish: Page url
+https://ob-code.github.io/Tic-Tac-Toe/ 
+
 - Download instructions:
 ```
 $ git clone Tic-Tac-Toe

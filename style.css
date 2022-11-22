@@ -1,15 +1,19 @@
 * {
     box-sizing: border-box;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 header {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
+    background-color: rgb(245, 228, 242);
 }
 
 .title {
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 3rem;
 }
 .turn {
     text-align: center;
@@ -17,7 +21,7 @@ header {
 }
 
 body {		
-    background-color: rgb(231, 254, 164);
+    background-color: rgb(204, 251, 192);
     background-image: url();
     margin: 0 auto;
 }
@@ -36,7 +40,7 @@ main{
 }
 
 .leftCol {
-    background-color: aqua;
+    background-color: rgb(250, 147, 96);
 }
 
 .player {
@@ -45,6 +49,7 @@ main{
 
 .symbol1 {
     text-align: center;
+    font-size: 1.5rem;
 }
 .playerImg1 {
     height: 200px;
@@ -53,6 +58,7 @@ main{
 }
 .symbol2 {
     text-align: center;
+    font-size: 1.5rem;
 }
 
 .playerImg2 {
@@ -62,7 +68,7 @@ main{
 }
 
 .rightCol {
-    background-color: bisque;
+    background-color: rgb(144, 112, 250);
 }
 .score {
     text-align: center;
@@ -79,6 +85,7 @@ main{
     padding-top: 100px;
     border: 1px solid black;
     /* color: transparent; */
+    background-color: rgb(223, 183, 215);
 }
 footer {
     width: 80%;
@@ -87,6 +94,7 @@ footer {
 .result {
     text-align: center;
     margin: 20px;
+    font-size: 3rem;
 }
 .butContainer {
     display: grid;
@@ -97,8 +105,15 @@ footer {
     margin: 20px;
     text-align: center; 
     background-color: lightgrey;
+    border: 2px solid black;
+    font-size: 1.5rem;
+    padding: 20px;
+    
 }
-
+.winner {
+    padding: 80px;
+    display: inline-block;
+}
 /* CLASSES USED WITH JS DOM - Under here */
 
 .addPlayer1 {

@@ -19,7 +19,3 @@ allSquares.addEventListener('click', function (event) {
 
     }
 })
-
-// document.querySelector('.bN1').classList.add('addPlayer1')
-
-// document.querySelector('.bN2').classList.add('addPlayer2')

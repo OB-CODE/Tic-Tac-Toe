@@ -11,8 +11,9 @@ header {
 .title {
     text-align: center;
 }
-.player {
+.turn {
     text-align: center;
+    font-size: 2rem;
 }
 
 body {		
@@ -29,14 +30,55 @@ main{
 	gap: 20px;
 }
 .gameContainer {
+    padding: 30px;
     display: grid;
     grid-template-columns: 3fr 3fr 3fr;
 }
+
+.leftCol {
+    background-color: aqua;
+}
+
+.player {
+    text-align: center;
+}
+
+.symbol1 {
+    text-align: center;
+}
+.playerImg1 {
+    height: 200px;
+    background-image: url(https://images.unsplash.com/photo-1579894963949-95530a650650?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80);
+    background-size: 100% 100%;
+}
+.symbol2 {
+    text-align: center;
+}
+
+.playerImg2 {
+    height: 200px;
+    background-image: url(https://images.unsplash.com/photo-1496989981497-27d69cdad83e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2841&q=80);
+    background-size: 100% 100%;
+}
+
+.rightCol {
+    background-color: bisque;
+}
+.score {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 2rem;
+}
+
 .bN1, .bN2, .bN3, .bN4, .bN5, .bN6, .bN7, .bN8, .bN9 {
     height: 200px;
     width: 200px;
     justify-content: center;
     margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    border: 1px solid black;
+    /* color: transparent; */
 }
 footer {
     width: 80%;
@@ -55,4 +97,15 @@ footer {
     margin: 20px;
     text-align: center; 
     background-color: lightgrey;
+}
+
+/* CLASSES USED WITH JS DOM - Under here */
+
+.addPlayer1 {
+    background-image: url(https://images.unsplash.com/photo-1579894963949-95530a650650?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80);
+    background-size: 100% 100%;
+}
+.addPlayer2 {
+    background-image: url(https://images.unsplash.com/photo-1496989981497-27d69cdad83e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2841&q=80);
+    background-size: 100% 100%;
 }

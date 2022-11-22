@@ -7,12 +7,7 @@ First major project to showcase commits - 2 days to complete functioning game.
 ## :fishing_pole_and_fish: Page url
 https://ob-code.github.io/Tic-Tac-Toe/ 
 
-- Download instructions:
-```
-$ git clone Tic-Tac-Toe
-$ cd Tic-Tac-Toe
 
-```
 
 ## 🗒️ - Planning & Problem Solving
 - Design and render a game of Tic Tac Toe in HTML/CSS and JS. 

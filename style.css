@@ -1,3 +1,58 @@
 * {
-    /* background-color: aqua; */
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+header {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+}
+.player {
+    text-align: center;
+}
+
+body {		
+    background-color: rgb(231, 254, 164);
+    background-image: url();
+    margin: 0 auto;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 2fr 5fr 2fr;
+    width: 80%;
+    margin: 0 auto;
+	gap: 20px;
+}
+.gameContainer {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+}
+.bN1, .bN2, .bN3, .bN4, .bN5, .bN6, .bN7, .bN8, .bN9 {
+    height: 200px;
+    width: 200px;
+    justify-content: center;
+    margin: 0 auto;
+}
+footer {
+    width: 80%;
+    margin: 0 auto;
+}
+.result {
+    text-align: center;
+    margin: 20px;
+}
+.butContainer {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    gap: 50px;
+}
+.clickPlayAgain, .clickResetScore, .clickPlayComputer {
+    margin: 20px;
+    text-align: center; 
+    background-color: lightgrey;
 }

@@ -19,3 +19,5 @@ allSquares.addEventListener('click', function (event) {
 
     }
 })
+//Design logic for winning & visually display which player won.
+// how to access the classList: document.querySelector('.bN5').classList[1]

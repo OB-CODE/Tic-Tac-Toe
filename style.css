@@ -76,7 +76,7 @@ main{
     font-size: 2rem;
 }
 
-.bN1, .bN2, .bN3, .bN4, .bN5, .bN6, .bN7, .bN8, .bN9 {
+#square1, #square2, #square3, #square4, #square5 ,#square6, #square7, #square8, #square9 {
     height: 200px;
     width: 200px;
     justify-content: center;

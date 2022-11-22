@@ -3,16 +3,18 @@
 
 let allSquares = document.querySelector('.gameContainer')
 let whoTurn = 1
+let scoreTrack = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+let copyOfScoreTrack = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
+
 
 allSquares.addEventListener('click', function (event) {
     let eachSquare = event.target
     console.log(parseInt(event.target.textContent))
-    let copyOfScoreTrack = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     if (whoTurn % 2 === 0) {
         eachSquare.classList.add('addPlayer2')
         let j = event.target.textContent
         console.log(parseInt(j)) // working now use this number to change score Array
-        copyOfScoreTrack.splice((j), 1, 'o')
+        copyOfScoreTrack.splice((j), 1, '2')
         console.log(copyOfScoreTrack)
         whoTurn++
         console.log(whoTurn)
@@ -21,13 +23,29 @@ allSquares.addEventListener('click', function (event) {
         eachSquare.classList.add('addPlayer1')
         let k = event.target.textContent
         console.log(parseInt(k))
-        copyOfScoreTrack.splice((k), 1, 'x')
+        copyOfScoreTrack.splice((k), 1, '1')
         console.log(copyOfScoreTrack)
         whoTurn++
         console.log(whoTurn)
         document.querySelector('.showSymbol').innerHTML = '&#x2B55'
-    }
+        check1()
+    } 
 })
+//check for winner
+if (copyOfScoreTrack.slice(1,4).toString() == ('1,1,1')) {
+    console.log('winner')
+}
+let combo1 = copyOfScoreTrack.slice(1,4).toString()
+
+
+let checkIs1 = 1
+function check1 () {
+    if (copyOfScoreTrack.slice(1,4).toString() == ('1,1,1')) {
+        console.log('winner')
+    }
+}
+
+
 //Design logic for winning & visually display which player won.
 // how to access the classList: document.querySelector('#square5')
     // Squares changed to IDs in order to use class for the scoring system and resetting the game. 
@@ -46,7 +64,7 @@ playAgain.addEventListener('click', function(event) {
 // socring logic - pseudo code:
 // 1. Options worked out for win (only 8 combos for each player) .2 store the choice made by each player so the combo can be listened out for .3. Display winner 4.Stop game from registering clicks at this point. 5. Show the winning combo by changing those squares. 6. update the score in each col.
 //console log put into eventListener to show the clicks and how to scrape the needed info of what they are hitting. 
-let scoreTrack = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+// let scoreTrack = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 // let copyOfScoreTrack = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] // use this to manipulate in event listener code. 
 
 //Known bug - Clicking on the .gameContainer changes the background - need to turn this feature off. 

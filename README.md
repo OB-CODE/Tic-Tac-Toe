@@ -33,5 +33,6 @@ https://ob-code.github.io/Tic-Tac-Toe/
 
 ---
 ## :sob: Lessons learnt
+- storing array data in a new variable change the data type and cause problems if not done correctly.
 ---
 ## :white_check_mark: Cool things I would add if I can keep working on this

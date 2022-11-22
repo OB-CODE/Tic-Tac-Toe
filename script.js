@@ -10,10 +10,13 @@ allSquares.addEventListener('click', function (event) {
         eachSquare.classList.add('addPlayer2')
         whoTurn++
         console.log(whoTurn)
+        document.querySelector('.showSymbol').innerHTML = '&#10060'
     } else {
         eachSquare.classList.add('addPlayer1')
         whoTurn++
         console.log(whoTurn)
+        document.querySelector('.showSymbol').innerHTML = '&#x2B55'
+
     }
 })
 

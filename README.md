@@ -22,8 +22,8 @@ https://ob-code.github.io/Tic-Tac-Toe/
 - **Deploy your game online**, where the rest of the world can access it
 - Use **semantic markup** for HTML and CSS (adhere to best practices)
 
-<img src="./images/wireframe.jpeg" alt="drawing" width="400"/>
-<img src="./images/flow%20chart.jpeg" alt="flow" width="400"/>
+<img src="./images/wireframe.jpeg" alt="drawing" width="50%" heigh="50%"/>
+<img src="./images/flow%20chart.jpeg" alt="flow" width="50%" heigh="50%"/>
 
 - The method of finding a draw check that all boxes have been selected, but was having a double up if a win was made on the last selection. A win and draw were both declared. A win status or true/false was brought in to try and avoid this as a secondary check to see if a win had occured. 
 

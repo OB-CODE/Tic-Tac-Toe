@@ -31,7 +31,7 @@ https://ob-code.github.io/Tic-Tac-Toe/
 ## :scream: Bugs to fix
 //Known bug - Clicking on the .gameContainer changes the background - need to turn this feature off. 
 // You can click on a square that has already been clicked on and it changes the turn (background stays the same)
-
+// Play again button does not clear the array so the previous selections are still counting towards the next game. 
 ---
 ## :sob: Lessons learnt
 - storing array data in a new variable change the data type and cause problems if not done correctly.

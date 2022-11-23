@@ -4,7 +4,8 @@
 
 let allSquares = document.querySelector('.gameContainer')
 let whoTurn = 1
-let scoreTrack = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+let emptyArr = []
+let scoreTrack = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
 let copyOfScoreTrack = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
 
 // make each score a number
@@ -127,6 +128,7 @@ playAgain.addEventListener('click', function(event) {
     children = allSquares.querySelectorAll(':scope > div')
     for (let i = 0; 0 <9; i++) {
         children[i].removeAttribute('class')
+        copyOfScoreTrack[(i+1)] = '0'
     }
 })
 

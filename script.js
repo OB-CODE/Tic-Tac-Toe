@@ -38,12 +38,22 @@ if (copyOfScoreTrack.slice(1,4).toString() == ('1,1,1')) {
 
 
 function check1 () {
-    if (copyOfScoreTrack.slice(1,4).toString() == ('1,1,1')) {
-        console.log('winner')
-    } if (copyOfScoreTrack.slice(4,7).toString() == ('1,1,1')) {
-        console.log('winner')
-    } if (copyOfScoreTrack.slice(7).toString() == ('1,1,1')) {
-        console.log('winner')
+    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('111')) {
+        console.log('winner1')
+    } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('111')) {
+        console.log('winner1')
+    } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('111')) {
+        console.log('winner1')
+    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('111')) {
+        console.log('winner1')
+    } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('111')) {
+        console.log('winner1')
+    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('111')) {
+        console.log('winner1')
+    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('111')) {
+        console.log('winner1')
+    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('111')) {
+        console.log('winner1')
     }
 }
 
@@ -72,3 +82,4 @@ playAgain.addEventListener('click', function(event) {
     //2. Storing the choice as a 'var combo' DOES NOT WORK - I think it captures the slice at the start and does not keep it upto date.
 
 //Known bug - Clicking on the .gameContainer changes the background - need to turn this feature off. 
+// You can click on a square that has already been clicked on and it changes the turn (background stays the same)

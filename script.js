@@ -43,6 +43,7 @@ allSquares.addEventListener('click', function (event) {
         whoTurn++
         console.log(whoTurn)
         check2 ()
+        checkDraw ()
         changeTurnSym ()
     } else {
         eachSquare.classList.add('addPlayer1')
@@ -53,9 +54,14 @@ allSquares.addEventListener('click', function (event) {
         whoTurn++
         console.log(whoTurn)
         check1()
+        checkDraw ()
         changeTurnSym ()
     } 
 })
+
+//Design logic for winning & visually display which player won.
+// how to access the classList: document.querySelector('#square5')
+    // Squares changed to IDs in order to use class for the scoring system and resetting the game. 
 //check for winner
 // using .at to create winning combos:
 
@@ -73,12 +79,17 @@ function check2 () {
     document.querySelector('.winner').classList.add('addPlayer2')
     setScore2.textContent++
     }
+} 
+
+// Create a draw feature. If none of the above 'win conditions' got triggered, the result must be a draw. 
+function checkDraw () {
+    if (copyOfScoreTrack.slice(1).sort().shift() != 0) {
+        console.log('draw')
+    }
 }
 
 
-//Design logic for winning & visually display which player won.
-// how to access the classList: document.querySelector('#square5')
-    // Squares changed to IDs in order to use class for the scoring system and resetting the game. 
+
 
 // Play again button
 let playAgain = document.querySelector('.clickPlayAgain')

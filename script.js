@@ -19,6 +19,7 @@ allSquares.addEventListener('click', function (event) {
         whoTurn++
         console.log(whoTurn)
         document.querySelector('.showSymbol').innerHTML = '&#10060'
+        check2 ()
     } else {
         eachSquare.classList.add('addPlayer1')
         let k = event.target.textContent
@@ -32,28 +33,60 @@ allSquares.addEventListener('click', function (event) {
     } 
 })
 //check for winner
-if (copyOfScoreTrack.slice(1,4).toString() == ('1,1,1')) {
-    console.log('winner')
-}
-
+// using .at to create winning combos:
 
 function check1 () {
     if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('111')) {
         console.log('winner1')
+        document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('111')) {
         console.log('winner1')
+        document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('111')) {
         console.log('winner1')
+        document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('111')) {
         console.log('winner1')
+        document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('111')) {
         console.log('winner1')
+        document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('111')) {
         console.log('winner1')
+        document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('111')) {
         console.log('winner1')
+        document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('111')) {
         console.log('winner1')
+        document.querySelector('.winner').classList.add('addPlayer1')
+    }
+}
+function check2 () {
+    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('222')) {
+        console.log('winner2')
+        document.querySelector('.winner').classList.add('addPlayer2')
+    } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('222')) {
+        console.log('winner2')
+        document.querySelector('.winner').classList.add('addPlayer2')
+    } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('222')) {
+        console.log('winner2')
+        document.querySelector('.winner').classList.add('addPlayer2')
+    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('222')) {
+        console.log('winner2')
+        document.querySelector('.winner').classList.add('addPlayer2')
+    } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('222')) {
+        console.log('winner2')
+        document.querySelector('.winner').classList.add('addPlayer2')
+    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('222')) {
+        console.log('winner2')
+        document.querySelector('.winner').classList.add('addPlayer2')
+    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('222')) {
+        console.log('winner2')
+        document.querySelector('.winner').classList.add('addPlayer2')
+    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('222')) {
+        console.log('winner2')
+        document.querySelector('.winner').classList.add('addPlayer2')
     }
 }
 

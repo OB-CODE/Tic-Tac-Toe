@@ -3,6 +3,10 @@ First major project to showcase commits - 2 days to complete functioning game.
 
  ---
 ## :page_facing_up: About
+- A functioning game of Tic-Tac-Toe. The game takes turns with two human inputs as clicks on the squares. Once a game is finished, you can either 'Play again' and keep the scores running and letting each player take turns in starting the game. The game can also be reset with the 'Reset scores' button taking you back to 0 vs 0 scores. 
+
+- Features coming soon: 'Vs the computer" - Button currently does nothing. 
+
 
 ## :fishing_pole_and_fish: Page url
 https://ob-code.github.io/Tic-Tac-Toe/ 
@@ -18,7 +22,8 @@ https://ob-code.github.io/Tic-Tac-Toe/
 - **Deploy your game online**, where the rest of the world can access it
 - Use **semantic markup** for HTML and CSS (adhere to best practices)
 
-[![Visual]( )
+![wireframe](./images/wireframe.jpeg)
+![flowchart](./images/flow%20chart.jpeg)
 
 - The method of finding a draw check that all boxes have been selected, but was having a double up if a win was made on the last selection. A win and draw were both declared. A win status or true/false was brought in to try and avoid this as a secondary check to see if a win had occured. 
 
@@ -30,13 +35,13 @@ https://ob-code.github.io/Tic-Tac-Toe/
 
 ## :scream: Bugs to fix
 //Known bugs:
-    - FIXED :sunglasses: No draw feature yet.
-    - FIXED :sunglasses: You can click on a square that has already been clicked on and it changes the turn (background stays the same)
-    - FIXED :sunglasses: Play again button does not clear the array so the previous selections are still counting towards the next game. 
-     - FIXED :sunglasses: "player [] won" still shows the winner from the previous game even when play again and reset buttons are clicked. 
-    - :grey_question: Show the winning combo by changing those squares in some way.
-    - :angry: Clicking on the .gameContainer changes the background - need to turn this feature off. 
-    - :angry: Need to stop game from registering clicks once winner declared. 
+- FIXED :sunglasses: No draw feature yet.
+- FIXED :sunglasses: You can click on a square that has already been clicked on and it changes the turn (background stays the same)
+- FIXED :sunglasses: Play again button does not clear the array so the previous selections are still counting towards the next game. 
+- FIXED :sunglasses: "player [] won" still shows the winner from the previous game even when play again and reset buttons are clicked. 
+- :grey_question: Show the winning combo by changing those squares in some way.
+- :angry: Clicking on the .gameContainer changes the background - need to turn this feature off. 
+- :angry: Need to stop game from registering clicks once winner declared. 
 
 
 ---
@@ -46,3 +51,5 @@ https://ob-code.github.io/Tic-Tac-Toe/
 - .at() = a very useful method and far less complex than splice and slice. 
 ---
 ## :white_check_mark: Cool things I would add if I can keep working on this
+- Computer logic to vs player
+- Choose setting 

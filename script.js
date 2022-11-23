@@ -35,12 +35,14 @@ allSquares.addEventListener('click', function (event) {
 if (copyOfScoreTrack.slice(1,4).toString() == ('1,1,1')) {
     console.log('winner')
 }
-let combo1 = copyOfScoreTrack.slice(1,4).toString()
 
 
-let checkIs1 = 1
 function check1 () {
     if (copyOfScoreTrack.slice(1,4).toString() == ('1,1,1')) {
+        console.log('winner')
+    } if (copyOfScoreTrack.slice(4,7).toString() == ('1,1,1')) {
+        console.log('winner')
+    } if (copyOfScoreTrack.slice(7).toString() == ('1,1,1')) {
         console.log('winner')
     }
 }
@@ -66,5 +68,7 @@ playAgain.addEventListener('click', function(event) {
 //console log put into eventListener to show the clicks and how to scrape the needed info of what they are hitting. 
 // let scoreTrack = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 // let copyOfScoreTrack = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] // use this to manipulate in event listener code. 
+    // numbbers now include 0 to make my maths easier :D
+    //2. Storing the choice as a 'var combo' DOES NOT WORK - I think it captures the slice at the start and does not keep it upto date.
 
 //Known bug - Clicking on the .gameContainer changes the background - need to turn this feature off. 

@@ -29,10 +29,13 @@ https://ob-code.github.io/Tic-Tac-Toe/
 ---
 
 ## :scream: Bugs to fix
-- none listed at this point
+//Known bug - Clicking on the .gameContainer changes the background - need to turn this feature off. 
+// You can click on a square that has already been clicked on and it changes the turn (background stays the same)
 
 ---
 ## :sob: Lessons learnt
 - storing array data in a new variable change the data type and cause problems if not done correctly.
+    Storing the choice as a 'var combo' DOES NOT WORK - I think it captures the slice at the start and does not keep it upto date. I have learnt to only use array mutation methods on the array when you are about to acces it. 
+- .at() = a very useful method and far less complex than splice and slice. 
 ---
 ## :white_check_mark: Cool things I would add if I can keep working on this

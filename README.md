@@ -20,22 +20,24 @@ https://ob-code.github.io/Tic-Tac-Toe/
 
 [![Visual]( )
 
+- The method of finding a draw check that all boxes have been selected, but was having a double up if a win was made on the last selection. A win and draw were both declared. A win status or true/false was brought in to try and avoid this as a secondary check to see if a win had occured. 
 
 ## 🧰: Tech
 ---
 - Programming languages: JS
-- Low tech JS - No use of custome functions. Will use: loops, conditions and array/string methods.
-
+- JS functions - pretty cool!
 ---
 
 ## :scream: Bugs to fix
 //Known bugs:
-    - :angry: Clicking on the .gameContainer changes the background - need to turn this feature off. 
-    - :angry:You can click on a square that has already been clicked on and it changes the turn (background stays the same)
+    - FIXED :sunglasses: No draw feature yet.
+    - FIXED :sunglasses: You can click on a square that has already been clicked on and it changes the turn (background stays the same)
     - FIXED :sunglasses: Play again button does not clear the array so the previous selections are still counting towards the next game. 
     - :angry: Need to stop game from registering clicks once winner declared. 
     - :grey_question: Show the winning combo by changing those squares in some way.
-    - :angry: no draw feature yet.
+    - :angry: Clicking on the .gameContainer changes the background - need to turn this feature off. 
+    - :angry: "player [] won" still shows the winner from the previous game even when play again and reset buttons are clicked. 
+
 
 ---
 ## :sob: Lessons learnt

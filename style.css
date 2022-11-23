@@ -133,7 +133,7 @@ footer {
     padding: 20px;
     
 }
-.winner {
+#winner {
     padding: 80px;
     display: inline-block;
     border: 1px solid black;
@@ -148,4 +148,14 @@ footer {
 .addPlayer2 {
     background-image: url(https://images.unsplash.com/photo-1496989981497-27d69cdad83e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2841&q=80);
     background-size: 100% 100%;
+}
+.draw {
+    background-image: url(./images/its\ a\ draw\ text.gif);
+    background-size: 100% 100%;
+    width: 400px;
+    text-align: center;
+}
+.invis {
+    color: transparent;
+    text-align: center;
 }

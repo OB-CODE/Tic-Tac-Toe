@@ -4,8 +4,21 @@
 
 let allSquares = document.querySelector('.gameContainer')
 let whoTurn = 1
-let emptyArr = []
-let scoreTrack = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
+
+// writing a method of changing the 'its your turn' div via a class attribute method. Will allow for other classes down the track.
+function changeTurnSym () {
+    if (whoTurn % 2 == 0) {
+        document.querySelector('div #showSymbol').removeAttribute('class')
+        document.querySelector('div #showSymbol').classList.add('sym2')
+    } else {
+        document.querySelector('div #showSymbol').removeAttribute('class')
+        document.querySelector('div #showSymbol').classList.add('sym1')
+    }
+}
+
+
+// let emptyArr = []
+// let scoreTrack = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
 let copyOfScoreTrack = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
 
 // make each score a number
@@ -29,7 +42,7 @@ allSquares.addEventListener('click', function (event) {
         console.log(copyOfScoreTrack)
         whoTurn++
         console.log(whoTurn)
-        document.querySelector('.showSymbol').innerHTML = '&#10060'
+        changeTurnSym ()
         check2 ()
     } else {
         eachSquare.classList.add('addPlayer1')
@@ -39,7 +52,7 @@ allSquares.addEventListener('click', function (event) {
         console.log(copyOfScoreTrack)
         whoTurn++
         console.log(whoTurn)
-        document.querySelector('.showSymbol').innerHTML = '&#x2B55'
+        changeTurnSym ()
         check1()
     } 
 })
@@ -125,6 +138,21 @@ function check2 () {
 // Play again button
 let playAgain = document.querySelector('.clickPlayAgain')
 playAgain.addEventListener('click', function(event) {
+    children = allSquares.querySelectorAll(':scope > div')
+    for (let i = 0; 0 <9; i++) {
+        children[i].removeAttribute('class')
+        copyOfScoreTrack[(i+1)] = '0'
+    }
+})
+// Button to clear score. Use the play again button to have all of the same features as that. Additional features 1. return whosTurn to 1 2. set scores to 0. 
+
+let resetScores = document.querySelector('.clickResetScore')
+resetScores.addEventListener('click', function(event) {
+    whoTurn = 1
+    setScore1 = 0
+    document.querySelector('.score1').textContent = 0
+    setScore2 = 0
+    document.querySelector('.score2').textContent = 0
     children = allSquares.querySelectorAll(':scope > div')
     for (let i = 0; 0 <9; i++) {
         children[i].removeAttribute('class')

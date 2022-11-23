@@ -60,73 +60,18 @@ allSquares.addEventListener('click', function (event) {
 // using .at to create winning combos:
 
 function check1 () {
-    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('111')) {
-        console.log('winner1')
-        document.querySelector('.winner').classList.add('addPlayer1')
-        setScore1.textContent++
-    } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('111')) {
-        console.log('winner1')
-        setScore1.textContent++
-        document.querySelector('.winner').classList.add('addPlayer1')
-    } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('111')) {
-        console.log('winner1')
-        setScore1.textContent++
-        document.querySelector('.winner').classList.add('addPlayer1')
-    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('111')) {
-        console.log('winner1')
-        setScore1.textContent++
-        document.querySelector('.winner').classList.add('addPlayer1')
-    } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('111')) {
-        console.log('winner1')
-        setScore1.textContent++
-        document.querySelector('.winner').classList.add('addPlayer1')
-    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('111')) {
-        console.log('winner1')
-        setScore1.textContent++
-        document.querySelector('.winner').classList.add('addPlayer1')
-    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('111')) {
-        console.log('winner1')
-        setScore1.textContent++
-        document.querySelector('.winner').classList.add('addPlayer1')
-    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('111')) {
-        console.log('winner1')
-        setScore1.textContent++
-        document.querySelector('.winner').classList.add('addPlayer1')
-    }
+    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('111') || copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('111') || copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('111') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('111') || copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('111') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('111') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('111') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('111')) {
+    console.log('winner1')
+    document.querySelector('.winner').classList.add('addPlayer1')
+    setScore1.textContent++
+    } 
 }
+
 function check2 () {
-    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('222')) {
-        console.log('winner2')
-        setScore2.textContent++
-        document.querySelector('.winner').classList.add('addPlayer2')
-    } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('222')) {
-        console.log('winner2')
-        setScore2.textContent++
-        document.querySelector('.winner').classList.add('addPlayer2')
-    } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('222')) {
-        console.log('winner2')
-        setScore2.textContent++
-        document.querySelector('.winner').classList.add('addPlayer2')
-    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('222')) {
-        console.log('winner2')
-        setScore2.textContent++
-        document.querySelector('.winner').classList.add('addPlayer2')
-    } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('222')) {
-        console.log('winner2')
-        setScore2.textContent++
-        document.querySelector('.winner').classList.add('addPlayer2')
-    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('222')) {
-        console.log('winner2')
-        setScore2.textContent++
-        document.querySelector('.winner').classList.add('addPlayer2')
-    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('222')) {
-        console.log('winner2')
-        setScore2.textContent++
-        document.querySelector('.winner').classList.add('addPlayer2')
-    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('222')) {
-        console.log('winner2')
-        setScore2.textContent++
-        document.querySelector('.winner').classList.add('addPlayer2')
+    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('222') || copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('222') || copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('222') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('222')) {
+    console.log('winner2')
+    document.querySelector('.winner').classList.add('addPlayer2')
+    setScore2.textContent++
     }
 }
 
@@ -149,10 +94,12 @@ playAgain.addEventListener('click', function(event) {
 let resetScores = document.querySelector('.clickResetScore')
 resetScores.addEventListener('click', function(event) {
     whoTurn = 1
-    setScore1 = 0
+    setScore1.textContent = 0
     document.querySelector('.score1').textContent = 0
-    setScore2 = 0
+    setScore2.textContent = 0
     document.querySelector('.score2').textContent = 0
+    document.querySelector('div #showSymbol').removeAttribute('class')
+    document.querySelector('div #showSymbol').classList.add('sym1')
     children = allSquares.querySelectorAll(':scope > div')
     for (let i = 0; 0 <9; i++) {
         children[i].removeAttribute('class')
@@ -169,6 +116,3 @@ resetScores.addEventListener('click', function(event) {
 // let copyOfScoreTrack = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] // use this to manipulate in event listener code. 
     // numbbers now include 0 to make my maths easier :D
     //2. Storing the choice as a 'var combo' DOES NOT WORK - I think it captures the slice at the start and does not keep it upto date.
-
-//Known bug - Clicking on the .gameContainer changes the background - need to turn this feature off. 
-// You can click on a square that has already been clicked on and it changes the turn (background stays the same)

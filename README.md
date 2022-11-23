@@ -35,7 +35,8 @@ https://ob-code.github.io/Tic-Tac-Toe/
     - FIXED :sunglasses: Play again button does not clear the array so the previous selections are still counting towards the next game. 
     - :angry: Need to stop game from registering clicks once winner declared. 
     - :grey_question: Show the winning combo by changing those squares in some way.
-    
+    - :angry: no draw feature yet.
+
 ---
 ## :sob: Lessons learnt
 - storing array data in a new variable change the data type and cause problems if not done correctly.

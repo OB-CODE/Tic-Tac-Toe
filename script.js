@@ -99,24 +99,30 @@ function checkDraw () {
 // Play again button
 let playAgain = document.querySelector('.clickPlayAgain')
 playAgain.addEventListener('click', function(event) {
-    document.querySelector('div.invis').classList.replace('invis', 'result')
-    document.querySelector('#winner').classList.replace('draw', 'invis')
+    if (winner == false) {
+        document.querySelector('div.invis').classList.replace('invis', 'result')
+        document.querySelector('#winner').classList.replace('draw', 'invis')
+    }
+    document.querySelector('#winner').removeAttribute('class')
     winner = false
     children = allSquares.querySelectorAll(':scope > div')
     for (let i = 0; 0 <9; i++) {
         children[i].removeAttribute('class')
         copyOfScoreTrack[(i+1)] = '0'
     } 
-    
 })
+
 // Button to clear score. Use the play again button to have all of the same features as that. Additional features 1. return whosTurn to 1 2. set scores to 0. 
 
 let resetScores = document.querySelector('.clickResetScore')
 resetScores.addEventListener('click', function(event) {
-    winner = false
+    if (winner == false) {
+        document.querySelector('#winner').removeAttribute('class')
+        document.querySelector('#winner').classList.replace('draw', 'invis')
+        document.querySelector('div.invis').classList.replace('invis', 'result')
+    }
     document.querySelector('#winner').removeAttribute('class')
-    document.querySelector('#winner').classList.replace('draw', 'invis')
-    document.querySelector('div.invis').classList.replace('invis', 'result')
+    winner = false
     whoTurn = 1
     setScore1.textContent = 0
     document.querySelector('.score1').textContent = 0

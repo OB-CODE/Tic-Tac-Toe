@@ -1,11 +1,21 @@
 //code to change the individual div boxes via adding an event listener to the parent
 //target each box via: document.querySelector('.bN1')  //use methods after ) such as ).textContent = " "
+// above largely removed and changed with square 
 
 let allSquares = document.querySelector('.gameContainer')
 let whoTurn = 1
 let scoreTrack = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 let copyOfScoreTrack = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
 
+// make each score a number
+let setScore1 = document.querySelector('div .score1')
+setScore1.textContent = 0
+let setScore2 = document.querySelector('div .score2')
+setScore1.textContent = 0
+
+
+
+// method of capturing the clicks. 
 
 allSquares.addEventListener('click', function (event) {
     let eachSquare = event.target
@@ -39,53 +49,69 @@ function check1 () {
     if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('111')) {
         console.log('winner1')
         document.querySelector('.winner').classList.add('addPlayer1')
+        setScore1.textContent++
     } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('111')) {
         console.log('winner1')
+        setScore1.textContent++
         document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('111')) {
         console.log('winner1')
+        setScore1.textContent++
         document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('111')) {
         console.log('winner1')
+        setScore1.textContent++
         document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('111')) {
         console.log('winner1')
+        setScore1.textContent++
         document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('111')) {
         console.log('winner1')
+        setScore1.textContent++
         document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('111')) {
         console.log('winner1')
+        setScore1.textContent++
         document.querySelector('.winner').classList.add('addPlayer1')
     } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('111')) {
         console.log('winner1')
+        setScore1.textContent++
         document.querySelector('.winner').classList.add('addPlayer1')
     }
 }
 function check2 () {
     if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('222')) {
         console.log('winner2')
+        setScore2.textContent++
         document.querySelector('.winner').classList.add('addPlayer2')
     } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('222')) {
         console.log('winner2')
+        setScore2.textContent++
         document.querySelector('.winner').classList.add('addPlayer2')
     } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('222')) {
         console.log('winner2')
+        setScore2.textContent++
         document.querySelector('.winner').classList.add('addPlayer2')
     } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('222')) {
         console.log('winner2')
+        setScore2.textContent++
         document.querySelector('.winner').classList.add('addPlayer2')
     } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('222')) {
         console.log('winner2')
+        setScore2.textContent++
         document.querySelector('.winner').classList.add('addPlayer2')
     } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('222')) {
         console.log('winner2')
+        setScore2.textContent++
         document.querySelector('.winner').classList.add('addPlayer2')
     } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('222')) {
         console.log('winner2')
+        setScore2.textContent++
         document.querySelector('.winner').classList.add('addPlayer2')
     } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('222')) {
         console.log('winner2')
+        setScore2.textContent++
         document.querySelector('.winner').classList.add('addPlayer2')
     }
 }

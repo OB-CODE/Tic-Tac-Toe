@@ -42,8 +42,8 @@ allSquares.addEventListener('click', function (event) {
         console.log(copyOfScoreTrack)
         whoTurn++
         console.log(whoTurn)
-        changeTurnSym ()
         check2 ()
+        changeTurnSym ()
     } else {
         eachSquare.classList.add('addPlayer1')
         let k = event.target.textContent
@@ -52,8 +52,8 @@ allSquares.addEventListener('click', function (event) {
         console.log(copyOfScoreTrack)
         whoTurn++
         console.log(whoTurn)
-        changeTurnSym ()
         check1()
+        changeTurnSym ()
     } 
 })
 //check for winner

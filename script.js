@@ -31,33 +31,37 @@ setScore1.textContent = 0
 allSquares.addEventListener('click', function (event) {
     let eachSquare = event.target
     console.log(parseInt(event.target.textContent))
-    if (whoTurn % 2 === 0) {
-        if (eachSquare.classList.value == '') {
-            eachSquare.classList.add('addPlayer2')
-            let j = event.target.textContent
-            console.log(parseInt(j)) // working now use this number to change score Array
-            copyOfScoreTrack.splice((j), 1, '2')
-            console.log(copyOfScoreTrack)
-            whoTurn++
-            console.log(whoTurn)
-            check2 ()
-            checkDraw ()
-            changeTurnSym ()
-        }
-    } else {
-        if (eachSquare.classList.value == '') {
-            eachSquare.classList.add('addPlayer1')
-            let k = event.target.textContent
-            console.log(parseInt(k))
-            copyOfScoreTrack.splice((k), 1, '1')
-            console.log(copyOfScoreTrack)
-            whoTurn++
-            console.log(whoTurn)
-            check1()
-            checkDraw ()
-            changeTurnSym ()
+    if  (winner == false) {
+        if (whoTurn % 2 === 0) {
+            if (eachSquare.classList.value == '') {
+                eachSquare.classList.add('addPlayer2')
+                let j = event.target.textContent
+                console.log(parseInt(j)) // working now use this number to change score Array
+                copyOfScoreTrack.splice((j), 1, '2')
+                console.log(copyOfScoreTrack)
+                whoTurn++
+                console.log(whoTurn)
+                check2 ()
+                checkDraw ()
+                changeTurnSym ()
+            } 
         }
     } 
+    if (winner == false) {
+        if (eachSquare.classList.value == '') {
+                eachSquare.classList.add('addPlayer1')
+                let k = event.target.textContent
+                console.log(parseInt(k))
+                copyOfScoreTrack.splice((k), 1, '1')
+                console.log(copyOfScoreTrack)
+                whoTurn++
+                console.log(whoTurn)
+                check1()
+                checkDraw ()
+                changeTurnSym ()
+        }
+
+    }
 })
 
 //Design logic for winning & visually display which player won.

@@ -39,17 +39,17 @@ https://ob-code.github.io/Tic-Tac-Toe/
 - FIXED :sunglasses: You can click on a square that has already been clicked on and it changes the turn (background stays the same)
 - FIXED :sunglasses: Play again button does not clear the array so the previous selections are still counting towards the next game. 
 - FIXED :sunglasses: "player [] won" still shows the winner from the previous game even when play again and reset buttons are clicked. 
+- FIXED :sunglasses: Need to stop game from registering clicks once winner declared. 
 - :grey_question: Show the winning combo by changing those squares in some way.
 - :angry: Clicking on the .gameContainer changes the background - need to turn this feature off. 
-- :angry: Need to stop game from registering clicks once winner declared. 
 
 
 ---
 ## :sob: Lessons learnt
-- storing array data in a new variable change the data type and cause problems if not done correctly.
-    Storing the choice as a 'var combo' DOES NOT WORK - I think it captures the slice at the start and does not keep it upto date. I have learnt to only use array mutation methods on the array when you are about to acces it. 
+- className and classList act very differently and the more understanding around these, the more detailed changes I will be able to apply. 
 - .at() = a very useful method and far less complex than splice and slice. 
 ---
 ## :white_check_mark: Cool things I would add if I can keep working on this
-- Computer logic to vs player
-- Choose setting 
+- Computer logic to vs player.
+- Choose symbols for players.
+- Web colour checker for accessability purposes.

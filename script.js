@@ -5,6 +5,7 @@
 let allSquares = document.querySelector('.gameContainer')
 let whoTurn = 1
 let winner = false
+let symbol = 1
 
 // writing a method of changing the 'its your turn' div via a class attribute method. Will allow for other classes down the track.
 function changeTurnSym () {
@@ -80,7 +81,7 @@ function check1 () {
 }
 
 function check2 () {
-    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('222') || copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('222') || copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('222') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('222')) {
+    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('222') || copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('222') || copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('222') || copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('222') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('222')) {
     console.log('winner2')
     document.querySelector('#winner').classList.add('addPlayer2')
     setScore2.textContent++
@@ -120,7 +121,7 @@ playAgain.addEventListener('click', function(event) {
 
 let resetScores = document.querySelector('.clickResetScore')
 resetScores.addEventListener('click', function(event) {
-    if (winner == false) {
+    if (document.querySelector('#winner').classList.value == 'draw') {
         document.querySelector('#winner').removeAttribute('class')
         document.querySelector('#winner').classList.replace('draw', 'invis')
         document.querySelector('div.invis').classList.replace('invis', 'result')
@@ -140,6 +141,15 @@ resetScores.addEventListener('click', function(event) {
         copyOfScoreTrack[(i+1)] = '0'
     }
 })
+
+// code for changing modes:
+// Set a default background colour via JS
+document.querySelector('div.result').classList.add('footerStandardBack')
+// default backgrounds for the biggers symbols
+document.querySelector('#playerImg1').classList.add('addPlayer1')
+document.querySelector('#playerImg2').classList.add('addPlayer2')
+
+
 
 // Pseudo Code - Planning area for each section to be commented out in time in order to copy into working code. 
 

@@ -6,7 +6,19 @@
 header {
     width: 80%;
     margin: 0 auto;
-    background-color: rgb(245, 228, 242);
+    background-color: rgb(255, 233, 173);
+    animation: colorChange 6s infinite;
+}
+@keyframes colorChange {
+    0% {
+        background-color: rgb( 255, 233, 173);
+    }
+    50% {
+        background-color: rgb(246, 166, 234);
+    }
+    100% {
+        background-color: rgb( 255, 233, 173);
+    }
 }
 
 .title {
@@ -19,9 +31,12 @@ header {
     text-align: center;
     font-size: 2rem;
 }
+#showSymbol {
+    display: inline-block;
+}
 
 body {		
-    background-color: rgb(204, 251, 192);
+    background-color: rgb(205, 253, 220);
     background-image: url();
     margin: 0 auto;
 }
@@ -36,7 +51,8 @@ main{
 .gameContainer {
     padding: 30px;
     display: grid;
-    grid-template-columns: 3fr 3fr 3fr;
+    grid-template-columns: 0fr 0fr 0fr;
+    justify-content: center;
 }
 
 .leftCol {
@@ -53,7 +69,6 @@ main{
     padding-bottom: 40px;
 }
 .sym1 {
-    display: inline-block;
     text-align: center;
     background-image: url(./images/cross-mark_274c.png);
     background-size: 100% 100%;
@@ -62,10 +77,8 @@ main{
     margin: 0 auto;
 }
 
-.playerImg1 {
+#playerImg1 {
     height: 200px;
-    background-image: url(https://images.unsplash.com/photo-1579894963949-95530a650650?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80);
-    background-size: 100% 100%;
 }
 
 
@@ -75,17 +88,16 @@ main{
     padding-bottom: 40px;
 }
 .sym2 {
-    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
     background-image: url(./images/hollow-red-circle_2b55.png);
     background-size: 100% 100%;
     height: 40px;
     width: 40px;
 }
 
-.playerImg2 {
+#playerImg2 {
     height: 200px;
-    background-image: url(https://images.unsplash.com/photo-1496989981497-27d69cdad83e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2841&q=80);
-    background-size: 100% 100%;
 }
 
 .rightCol {
@@ -106,9 +118,11 @@ main{
     padding-top: 100px;
     border: 1px solid black;
     /* color: transparent; */
-    background-color: rgb(223, 183, 215);
+    background-color: rgb(211, 197, 252);
     color: transparent;
+    cursor: pointer;
 }
+
 footer {
     width: 80%;
     margin: 0 auto;
@@ -127,11 +141,12 @@ footer {
 .clickPlayAgain, .clickResetScore, .clickPlayComputer {
     margin: 20px;
     text-align: center; 
-    background-color: lightgrey;
+    background-color: #F5B3DA;
     border: 2px solid black;
     font-size: 1.5rem;
     padding: 20px;
-    
+    cursor: pointer;
+    border-radius: 20px;
 }
 #winner {
     padding: 80px;
@@ -142,20 +157,39 @@ footer {
 /* CLASSES USED WITH JS DOM - Under here */
 
 .addPlayer1 {
-    background-image: url(https://images.unsplash.com/photo-1579894963949-95530a650650?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80);
+    background-image: url(./images/cross.png);
     background-size: 100% 100%;
 }
+
 .addPlayer2 {
-    background-image: url(https://images.unsplash.com/photo-1496989981497-27d69cdad83e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2841&q=80);
+    background-image: url(./images/o\ t\ back.png);
     background-size: 100% 100%;
 }
 .draw {
     background-image: url(./images/its\ a\ draw\ text.gif);
     background-size: 100% 100%;
     width: 400px;
+    height: 217;
     text-align: center;
 }
 .invis {
     color: transparent;
     text-align: center;
+}
+.footerStandardBack {
+    background-image: url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80);
+    background-size: 100% 100%;
+}
+
+/* Hover CSS */
+
+.gameContainer > div:hover {
+    transform: scale(1.2);
+    transition: 1.5s;
+}
+.butContainer > div:hover {
+    transform: scale(1.2);
+    transition: 1.5s;
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+    
 }

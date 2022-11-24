@@ -5,7 +5,30 @@
 let allSquares = document.querySelector('.gameContainer')
 let whoTurn = 1
 let winner = false
-let symbol = 1
+let gameStyle = 1
+let gameStyleContainer = document.querySelector('.options')
+
+// write a function to listen for button clicks on game style on the DOM and change in the website. 
+gameStyleContainer.addEventListener('click', function (event) {
+    console.log(event.target)
+    let styleSelect = event.target
+    if (styleSelect == document.querySelector('#style1')) {
+        gameStyle = 1
+    } if (styleSelect == document.querySelector('#style2')) {
+        gameStyle = 2
+    } if (styleSelect == document.querySelector('#style3')) {
+        gameStyle = 3
+    }
+})
+
+// function checkStyle () {
+//     if (gameStyle == 2) {
+//         // change symbols to rvb
+//     }
+//     if (gameStyle == 3) {
+//         // change symbols to politics
+//     }
+// }
 
 // writing a method of changing the 'its your turn' div via a class attribute method. Will allow for other classes down the track.
 function changeTurnSym () {

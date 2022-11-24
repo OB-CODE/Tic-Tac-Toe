@@ -2,6 +2,22 @@
     box-sizing: border-box;
     /* border: 1px solid red; */
 }
+.options > span {
+    margin: 20px;
+    text-align: center; 
+    background-color: #F5B3DA;
+    border: 2px solid black;
+    font-size: 1.5rem;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.options {
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
 
 header {
     width: 80%;
@@ -29,6 +45,7 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     font-size: 3rem;
+    margin: 5px;
 }
 .turn {
     text-align: center;
@@ -42,24 +59,30 @@ body {
     background-color: rgb(205, 253, 220);
     background-image: url();
     margin: 0 auto;
+    display: grid 1fr;
+    max-width: 1600px;
 }
 
 main{
     display: grid;
-    grid-template-columns: 2fr 5fr 2fr;
+    grid-template-columns: 2fr 2fr 2fr;
     width: 80%;
     margin: 0 auto;
 	gap: 20px;
 }
+
+
 .gameContainer {
     padding: 30px;
     display: grid;
     grid-template-columns: 0fr 0fr 0fr;
     justify-content: center;
+    max-width: 100%;
 }
 
 .leftCol {
     background-color: rgb(250, 147, 96);
+    width: 100%;
 }
 
 .player {
@@ -105,6 +128,7 @@ main{
 
 .rightCol {
     background-color: rgb(144, 112, 250);
+    width: 100%;
 }
 .score {
     text-align: center;
@@ -159,6 +183,7 @@ footer {
 /* CLASSES USED WITH JS DOM - Under here */
 
 .addPlayer1 {
+    margin: 10px;
     background-image: url(./images/cross.png);
     background-size: 100% 100%;
 }
@@ -168,6 +193,18 @@ footer {
     background-image: url(./images/o\ t\ back.png);
     background-size: 100% 100%;
 }
+.addPlayer1rvb {
+    margin: 10px;
+    background-image: url(./images/red2.png);
+    background-size: 100% 100%;
+}
+
+.addPlayer2rvb {
+    margin: 10px;
+    background-image: url(./images/blue.png);
+    background-size: 100% 100%;
+}
+
 .draw {
     background-image: url(./images/its\ a\ draw\ text.gif);
     background-size: 100% 100%;

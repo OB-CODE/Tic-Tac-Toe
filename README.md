@@ -42,6 +42,7 @@ https://ob-code.github.io/Tic-Tac-Toe/
 - FIXED :sunglasses: Need to stop game from registering clicks once winner declared. 
 - FIXED :sunglasses: Clicking on the .gameContainer changes the background - need to turn this feature off. 
 - FIXED :sunglasses: Show the winning combo by changing those squares in some way.
+- :bug: Not designed for use under 1200px screens at this point. 
 
 
 ---

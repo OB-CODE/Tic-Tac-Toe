@@ -51,6 +51,7 @@ https://ob-code.github.io/Tic-Tac-Toe/
 - .at() = a very useful method and far less complex than splice and slice. 
 - .gameContainer > div:hover { in CSS: The child combinator (>) is placed between two CSS selectors. It matches only those elements matched by the second selector that are the direct children of elements matched by the first.
 - https://color.adobe.com/create/color-wheel Great website for looking at colour values. 
+- invoking a function within another is cool and works well. But if I invoke a function within a function at the end, say after a for loop - it doesn't work (What's up with that - I will need to research this more).
 
 ---
 ## :white_check_mark: Cool things I would add if I can keep working on this

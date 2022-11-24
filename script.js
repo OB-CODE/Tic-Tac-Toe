@@ -21,17 +21,14 @@ gameStyleContainer.addEventListener('click', function (event) {
     if (styleSelect == document.querySelector('#style1')) {
         gameStyle = 1
         gameStyleChange ()
-        changeTurnSym ()
         changeStyleMidGame ()
     } if (styleSelect == document.querySelector('#style2')) {
         gameStyle = 2
         gameStyleChange ()
-        changeTurnSym ()
         changeStyleMidGame ()
     } if (styleSelect == document.querySelector('#style3')) {
         gameStyle = 3
         gameStyleChange ()
-        changeTurnSym ()
         changeStyleMidGame ()
     }
 })
@@ -233,7 +230,7 @@ resetScores.addEventListener('click', function (event) {
     setScore2.textContent = 0
     document.querySelector('.score2').textContent = 0
     document.querySelector('div #showSymbol').removeAttribute('class')
-    document.querySelector('div #showSymbol').classList.add('addPlayer1')
+    checkGameStyleOnButtonClickAndChangeTopSymbol ()
     children = allSquares.querySelectorAll(':scope > div')
     for (let i = 0; 0 < 9; i++) {
         children[i].removeAttribute('class')
@@ -251,12 +248,27 @@ function changeStyleMidGame () {
     document.querySelector('.score1').textContent = 0
     setScore2.textContent = 0
     document.querySelector('.score2').textContent = 0
+    checkGameStyleOnButtonClickAndChangeTopSymbol () 
     children = allSquares.querySelectorAll(':scope > div')
     for (let i = 0; 0 < 9; i++) {
         children[i].removeAttribute('class')
         copyOfScoreTrack[(i + 1)] = '0'
     }
 }
+
+function checkGameStyleOnButtonClickAndChangeTopSymbol () {
+    if (gameStyle == 1) {
+        document.querySelector('#showSymbol').removeAttribute('class')
+        document.querySelector('#showSymbol').classList.add('addPlayer1')
+    } else if (gameStyle == 2) {
+        document.querySelector('#showSymbol').removeAttribute('class')
+        document.querySelector('#showSymbol').classList.add('addPlayer1rvb')
+    } else if (gameStyle == 3) {
+        document.querySelector('#showSymbol').removeAttribute('class')
+        document.querySelector('#showSymbol').classList.add('addPlayer1election')
+    }
+}
+
 
 
 // code for changing modes:

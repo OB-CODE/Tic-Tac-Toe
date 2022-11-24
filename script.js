@@ -30,6 +30,10 @@ gameStyleContainer.addEventListener('click', function (event) {
         gameStyle = 3
         gameStyleChange ()
         changeStyleMidGame ()
+    } if (styleSelect == document.querySelector('#style4')) {
+        gameStyle = 4
+        gameStyleChange ()
+        changeStyleMidGame ()
     }
 })
 // code to run a function to change game stype according to button clicks above. 
@@ -56,6 +60,13 @@ function gameStyleChange () {
         document.querySelector('#playerImg2').classList.add('addPlayer2election')
         document.querySelector('div#result').removeAttribute('class')
         document.querySelector('div#result').classList.add('footerElectionBack')
+    } if (gameStyle == 4) {
+        document.querySelector('#playerImg1').removeAttribute('class')
+        document.querySelector('#playerImg2').removeAttribute('class')
+        document.querySelector('#playerImg1').classList.add('addPlayer1GoneFishing')
+        document.querySelector('#playerImg2').classList.add('addPlayer2GoneFishing')
+        document.querySelector('div#result').removeAttribute('class')
+        document.querySelector('div#result').classList.add('footerSbobBack')
     }
 }
 
@@ -71,6 +82,8 @@ function changeTurnSym() {
             document.querySelector('div #showSymbol').classList.add('addPlayer2rvb')
         } if (gameStyle == 3) {
             document.querySelector('div #showSymbol').classList.add('addPlayer2election')
+        } if (gameStyle == 4) {
+            document.querySelector('div #showSymbol').classList.add('addPlayer2GoneFishing')
         } 
     } else {
         document.querySelector('div #showSymbol').removeAttribute('class')
@@ -80,6 +93,8 @@ function changeTurnSym() {
             document.querySelector('div #showSymbol').classList.add('addPlayer1rvb')
         } if (gameStyle == 3) {
             document.querySelector('div #showSymbol').classList.add('addPlayer1election')
+        } if (gameStyle == 4) {
+            document.querySelector('div #showSymbol').classList.add('addPlayer1GoneFishing')
         } 
     }
 }
@@ -107,6 +122,8 @@ allSquares.addEventListener('click', function (event) {
                     eachSquare.classList.add('addPlayer2rvb')
                 } if (gameStyle == 3) {
                     eachSquare.classList.add('addPlayer2election')
+                } if (gameStyle == 4) {
+                    eachSquare.classList.add('addPlayer2GoneFishing')
                 } 
                 let j = event.target.textContent
                 console.log(parseInt(j)) // working now use this number to change score Array
@@ -129,6 +146,8 @@ allSquares.addEventListener('click', function (event) {
                 eachSquare.classList.add('addPlayer1rvb')
             } if (gameStyle == 3) {
                 eachSquare.classList.add('addPlayer1election')
+            } if (gameStyle == 4) {
+                eachSquare.classList.add('addPlayer1GoneFishing')
             } 
             eachSquare.classList.add('addPlayer1')
             let k = event.target.textContent
@@ -161,7 +180,9 @@ function check1() {
             document.querySelector('#winner').classList.add('addPlayer1rvb')
         } if (gameStyle == 3) {
             document.querySelector('#winner').classList.add('addPlayer1election')
-        }         
+        } if (gameStyle == 4) {
+            document.querySelector('#winner').classList.add('addPlayer1GoneFishing')
+        }       
         setScore1.textContent++
         return winner = true
     }
@@ -176,6 +197,8 @@ function check2() {
             document.querySelector('#winner').classList.add('addPlayer2rvb')
         } if (gameStyle == 3) {
             document.querySelector('#winner').classList.add('addPlayer2election')
+        } if (gameStyle == 4) {
+            document.querySelector('#winner').classList.add('addPlayer2GoneFishing')
         } 
         setScore2.textContent++
         return winner = true
@@ -266,6 +289,9 @@ function checkGameStyleOnButtonClickAndChangeTopSymbol () {
     } else if (gameStyle == 3) {
         document.querySelector('#showSymbol').removeAttribute('class')
         document.querySelector('#showSymbol').classList.add('addPlayer1election')
+    } else if (gameStyle == 4) {
+        document.querySelector('#showSymbol').removeAttribute('class')
+        document.querySelector('#showSymbol').classList.add('addPlayer1GoneFishing')
     }
 }
 
@@ -362,3 +388,8 @@ function increaseWinners1() {
         document.querySelector('#square7').classList.add('boxesThatWon')
     }
 } 
+
+// computer maths:
+
+copyOfScoreTrack
+

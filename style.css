@@ -223,6 +223,17 @@ footer {
     background-image: url(./images/Albo\ copy.png);
     background-size: 100% 100%;
 }
+.addPlayer1GoneFishing {
+    margin: 10px;
+    background-image: url(./images/hook.png);
+    background-size: 100% 100%;
+}
+.addPlayer2GoneFishing {
+    margin: 10px;
+    background-image: url(./images/fish.png);
+    background-size: 100% 100%;
+}
+
 
 .draw {
     background-image: url(./images/its\ a\ draw\ text.gif);
@@ -246,6 +257,11 @@ footer {
 }
 .footerElectionBack {
     background-image: url(./images/phouse.jpeg);
+    background-size: 100% 100%;
+    opacity: 0.8;
+}
+.footerSbobBack {
+    background-image: url(./images/spongeBobTown.jpeg);
     background-size: 100% 100%;
     opacity: 0.8;
 }

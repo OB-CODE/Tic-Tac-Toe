@@ -8,36 +8,82 @@ let winner = false
 let gameStyle = 1
 let gameStyleContainer = document.querySelector('.options')
 
+// set defaults:
+document.querySelector('#playerImg1').classList.add('addPlayer1')
+document.querySelector('#playerImg2').classList.add('addPlayer2')
+
+
+
 // write a function to listen for button clicks on game style on the DOM and change in the website. 
 gameStyleContainer.addEventListener('click', function (event) {
     console.log(event.target)
     let styleSelect = event.target
     if (styleSelect == document.querySelector('#style1')) {
         gameStyle = 1
+        gameStyleChange ()
+        changeTurnSym ()
+        changeStyleMidGame ()
     } if (styleSelect == document.querySelector('#style2')) {
         gameStyle = 2
+        gameStyleChange ()
+        changeTurnSym ()
+        changeStyleMidGame ()
     } if (styleSelect == document.querySelector('#style3')) {
         gameStyle = 3
+        gameStyleChange ()
+        changeTurnSym ()
+        changeStyleMidGame ()
     }
 })
+// code to run a function to change game stype according to button clicks above. 
 
-// function checkStyle () {
-//     if (gameStyle == 2) {
-//         // change symbols to rvb
-//     }
-//     if (gameStyle == 3) {
-//         // change symbols to politics
-//     }
-// }
+function gameStyleChange () {
+    if (gameStyle == 1) {
+        document.querySelector('#playerImg1').removeAttribute('class')
+        document.querySelector('#playerImg2').removeAttribute('class')
+        document.querySelector('#playerImg1').classList.add('addPlayer1')
+        document.querySelector('#playerImg2').classList.add('addPlayer2')
+        document.querySelector('div#result').removeAttribute('class')
+        document.querySelector('div#result').classList.add('footerStandardBack')
+    } if (gameStyle == 2) {
+        document.querySelector('#playerImg1').removeAttribute('class')
+        document.querySelector('#playerImg2').removeAttribute('class')
+        document.querySelector('#playerImg1').classList.add('addPlayer1rvb')
+        document.querySelector('#playerImg2').classList.add('addPlayer2rvb')
+        document.querySelector('div#result').removeAttribute('class')
+        document.querySelector('div#result').classList.add('footerRVBBack')
+    } if (gameStyle == 3) {
+        document.querySelector('#playerImg1').removeAttribute('class')
+        document.querySelector('#playerImg2').removeAttribute('class')
+        document.querySelector('#playerImg1').classList.add('addPlayer1election')
+        document.querySelector('#playerImg2').classList.add('addPlayer2election')
+        document.querySelector('div#result').removeAttribute('class')
+        document.querySelector('div#result').classList.add('footerElectionBack')
+    }
+}
+
+
 
 // writing a method of changing the 'its your turn' div via a class attribute method. Will allow for other classes down the track.
-function changeTurnSym () {
+function changeTurnSym() {
     if (whoTurn % 2 == 0) {
         document.querySelector('div #showSymbol').removeAttribute('class')
-        document.querySelector('div #showSymbol').classList.add('sym2')
+        if (gameStyle == 1) {
+            document.querySelector('div #showSymbol').classList.add('addPlayer2')
+        } if (gameStyle == 2) {
+            document.querySelector('div #showSymbol').classList.add('addPlayer2rvb')
+        } if (gameStyle == 3) {
+            document.querySelector('div #showSymbol').classList.add('addPlayer2election')
+        } 
     } else {
         document.querySelector('div #showSymbol').removeAttribute('class')
-        document.querySelector('div #showSymbol').classList.add('sym1')
+        if (gameStyle == 1) {
+            document.querySelector('div #showSymbol').classList.add('addPlayer1')
+        } if (gameStyle == 2) {
+            document.querySelector('div #showSymbol').classList.add('addPlayer1rvb')
+        } if (gameStyle == 3) {
+            document.querySelector('div #showSymbol').classList.add('addPlayer1election')
+        } 
     }
 }
 let copyOfScoreTrack = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
@@ -55,36 +101,49 @@ setScore1.textContent = 0
 allSquares.addEventListener('click', function (event) {
     let eachSquare = event.target
     console.log(parseInt(event.target.textContent))
-    if  (winner == false) {
+    if (winner == false) {
         if (whoTurn % 2 === 0) {
             if (eachSquare.classList.value == '') {
-                eachSquare.classList.add('addPlayer2')
+                if (gameStyle == 1) {
+                    eachSquare.classList.add('addPlayer2')
+                } if (gameStyle == 2) {
+                    eachSquare.classList.add('addPlayer2rvb')
+                } if (gameStyle == 3) {
+                    eachSquare.classList.add('addPlayer2election')
+                } 
                 let j = event.target.textContent
                 console.log(parseInt(j)) // working now use this number to change score Array
                 copyOfScoreTrack.splice((j), 1, '2')
                 console.log(copyOfScoreTrack)
                 whoTurn++
                 console.log(whoTurn)
-                check2 ()
-                checkDraw ()
-                changeTurnSym ()
-                increaseWinners2 ()
-            } 
+                check2()
+                checkDraw()
+                changeTurnSym()
+                increaseWinners2()
+            }
         }
-    } 
+    }
     if (winner == false) {
         if (eachSquare.classList.value == '') {
+            if (gameStyle == 1) {
                 eachSquare.classList.add('addPlayer1')
-                let k = event.target.textContent
-                console.log(parseInt(k))
-                copyOfScoreTrack.splice((k), 1, '1')
-                console.log(copyOfScoreTrack)
-                whoTurn++
-                console.log(whoTurn)
-                check1()
-                checkDraw ()
-                changeTurnSym ()
-                increaseWinners1 ()
+            } if (gameStyle == 2) {
+                eachSquare.classList.add('addPlayer1rvb')
+            } if (gameStyle == 3) {
+                eachSquare.classList.add('addPlayer1election')
+            } 
+            eachSquare.classList.add('addPlayer1')
+            let k = event.target.textContent
+            console.log(parseInt(k))
+            copyOfScoreTrack.splice((k), 1, '1')
+            console.log(copyOfScoreTrack)
+            whoTurn++
+            console.log(whoTurn)
+            check1()
+            checkDraw()
+            changeTurnSym()
+            increaseWinners1()
         }
 
     }
@@ -92,35 +151,47 @@ allSquares.addEventListener('click', function (event) {
 
 //Design logic for winning & visually display which player won.
 // how to access the classList: document.querySelector('#square5')
-    // Squares changed to IDs in order to use class for the scoring system and resetting the game. 
+// Squares changed to IDs in order to use class for the scoring system and resetting the game. 
 //check for winner
 // using .at to create winning combos:
 
-function check1 () {
-    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('111') || copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(6) == ('111') || copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) + copyOfScoreTrack.at(9) == ('111') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) + copyOfScoreTrack.at(7) == ('111') || copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(8) == ('111') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) + copyOfScoreTrack.at(9) == ('111') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(9) == ('111') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(7) == ('111')) {
-    console.log('winner1')
-    document.querySelector('#winner').classList.add('addPlayer1')
-    setScore1.textContent++
-    return winner = true
-    } 
+function check1() {
+    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) + copyOfScoreTrack.at(3) == ('111') || copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(6) == ('111') || copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) + copyOfScoreTrack.at(9) == ('111') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) + copyOfScoreTrack.at(7) == ('111') || copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(8) == ('111') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) + copyOfScoreTrack.at(9) == ('111') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(9) == ('111') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(7) == ('111')) {
+        console.log('winner1')
+        if (gameStyle == 1) {
+            document.querySelector('#winner').classList.add('addPlayer1')
+        } if (gameStyle == 2) {
+            document.querySelector('#winner').classList.add('addPlayer1rvb')
+        } if (gameStyle == 3) {
+            document.querySelector('#winner').classList.add('addPlayer1election')
+        }         
+        setScore1.textContent++
+        return winner = true
+    }
 }
 
-function check2 () {
-    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('222') || copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('222') || copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('222') || copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('222') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('222')) {
-    console.log('winner2')
-    document.querySelector('#winner').classList.add('addPlayer2')
-    setScore2.textContent++
-    return winner = true
+function check2() {
+    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) + copyOfScoreTrack.at(3) == ('222') || copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(6) == ('222') || copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) + copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) + copyOfScoreTrack.at(7) == ('222') || copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(8) == ('222') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) + copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(9) == ('222') || copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(7) == ('222')) {
+        console.log('winner2')
+        if (gameStyle == 1) {
+            document.querySelector('#winner').classList.add('addPlayer2')
+        } if (gameStyle == 2) {
+            document.querySelector('#winner').classList.add('addPlayer2rvb')
+        } if (gameStyle == 3) {
+            document.querySelector('#winner').classList.add('addPlayer2election')
+        } 
+        setScore2.textContent++
+        return winner = true
     }
-} 
+}
 
 // Create a draw feature. If none of the above 'win conditions' got triggered, the result must be a draw. 
-function checkDraw () {
+function checkDraw() {
     if (copyOfScoreTrack.slice(1).sort().shift() != 0) {
         if (winner == false) {
-        console.log('draw')
-        document.querySelector('#winner').classList.add('draw')
-        document.querySelector('div.result').classList.replace('result', 'invis')
+            console.log('draw')
+            document.querySelector('#winner').classList.add('draw')
+            document.querySelector('div#result').classList.add('invis')
         }
     }
 }
@@ -128,24 +199,27 @@ function checkDraw () {
 
 // Play again button
 let playAgain = document.querySelector('.clickPlayAgain')
-playAgain.addEventListener('click', function(event) {
+playAgain.addEventListener('click', function (event) {
     if (winner == false) {
-        document.querySelector('div.invis').classList.replace('invis', 'result')
-        document.querySelector('#winner').classList.replace('draw', 'invis')
-    }
+        console.log('no play again until winner declared')
+    } if (winner == true) {
+    document.querySelector('div#result').removeAttribute('class')
+    gameStyleChange ()
+    document.querySelector('#winner').classList.replace('draw', 'invis')
     document.querySelector('#winner').removeAttribute('class')
     winner = false
     children = allSquares.querySelectorAll(':scope > div')
-    for (let i = 0; 0 <9; i++) {
-        children[i].removeAttribute('class')
-        copyOfScoreTrack[(i+1)] = '0'
-    } 
+        for (let i = 0; 0 < 9; i++) {
+            children[i].removeAttribute('class')
+            copyOfScoreTrack[(i + 1)] = '0'
+        }
+    }
 })
 
 // Button to clear score. Use the play again button to have all of the same features as that. Additional features 1. return whosTurn to 1 2. set scores to 0. 
 
 let resetScores = document.querySelector('.clickResetScore')
-resetScores.addEventListener('click', function(event) {
+resetScores.addEventListener('click', function (event) {
     if (document.querySelector('#winner').classList.value == 'draw') {
         document.querySelector('#winner').removeAttribute('class')
         document.querySelector('#winner').classList.replace('draw', 'invis')
@@ -159,20 +233,37 @@ resetScores.addEventListener('click', function(event) {
     setScore2.textContent = 0
     document.querySelector('.score2').textContent = 0
     document.querySelector('div #showSymbol').removeAttribute('class')
-    document.querySelector('div #showSymbol').classList.add('sym1')
+    document.querySelector('div #showSymbol').classList.add('addPlayer1')
     children = allSquares.querySelectorAll(':scope > div')
-    for (let i = 0; 0 <9; i++) {
+    for (let i = 0; 0 < 9; i++) {
         children[i].removeAttribute('class')
-        copyOfScoreTrack[(i+1)] = '0'
+        copyOfScoreTrack[(i + 1)] = '0'
     }
 })
 
+// take some code from above to make a fucntion to reset aspects when a style change is made
+
+function changeStyleMidGame () {
+    document.querySelector('#winner').removeAttribute('class')
+    winner = false
+    whoTurn = 1
+    setScore1.textContent = 0
+    document.querySelector('.score1').textContent = 0
+    setScore2.textContent = 0
+    document.querySelector('.score2').textContent = 0
+    children = allSquares.querySelectorAll(':scope > div')
+    for (let i = 0; 0 < 9; i++) {
+        children[i].removeAttribute('class')
+        copyOfScoreTrack[(i + 1)] = '0'
+    }
+}
+
+
 // code for changing modes:
 // Set a default background colour via JS
-document.querySelector('div.result').classList.add('footerStandardBack')
+document.querySelector('div#result').classList.add('footerStandardBack')
 // default backgrounds for the biggers symbols
-document.querySelector('#playerImg1').classList.add('addPlayer1')
-document.querySelector('#playerImg2').classList.add('addPlayer2')
+
 
 
 
@@ -183,79 +274,79 @@ document.querySelector('#playerImg2').classList.add('addPlayer2')
 //console log put into eventListener to show the clicks and how to scrape the needed info of what they are hitting. 
 // let scoreTrack = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 // let copyOfScoreTrack = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] // use this to manipulate in event listener code. 
-    // numbbers now include 0 to make my maths easier :D
-    //2. Storing the choice as a 'var combo' DOES NOT WORK - I think it captures the slice at the start and does not keep it upto date.
+// numbbers now include 0 to make my maths easier :D
+//2. Storing the choice as a 'var combo' DOES NOT WORK - I think it captures the slice at the start and does not keep it upto date.
 
 
 // Make a function to work out the winning comobo to increase winning box size:
-function increaseWinners2 () {
-    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('222')) {
+function increaseWinners2() {
+    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) + copyOfScoreTrack.at(3) == ('222')) {
         document.querySelector('#square1').classList.add('boxesThatWon')
         document.querySelector('#square2').classList.add('boxesThatWon')
         document.querySelector('#square3').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('222')) {
+    } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(6) == ('222')) {
         document.querySelector('#square4').classList.add('boxesThatWon')
         document.querySelector('#square5').classList.add('boxesThatWon')
         document.querySelector('#square6').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('222')) {
+    } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) + copyOfScoreTrack.at(9) == ('222')) {
         document.querySelector('#square7').classList.add('boxesThatWon')
         document.querySelector('#square8').classList.add('boxesThatWon')
         document.querySelector('#square9').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('222')) {
+    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) + copyOfScoreTrack.at(7) == ('222')) {
         document.querySelector('#square1').classList.add('boxesThatWon')
         document.querySelector('#square4').classList.add('boxesThatWon')
         document.querySelector('#square7').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('222')) {
+    } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(8) == ('222')) {
         document.querySelector('#square2').classList.add('boxesThatWon')
         document.querySelector('#square5').classList.add('boxesThatWon')
         document.querySelector('#square8').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('222')) {
+    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) + copyOfScoreTrack.at(9) == ('222')) {
         document.querySelector('#square3').classList.add('boxesThatWon')
         document.querySelector('#square6').classList.add('boxesThatWon')
         document.querySelector('#square9').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('222')) {
+    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(9) == ('222')) {
         document.querySelector('#square1').classList.add('boxesThatWon')
         document.querySelector('#square5').classList.add('boxesThatWon')
         document.querySelector('#square9').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('222')) {
+    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(7) == ('222')) {
         document.querySelector('#square3').classList.add('boxesThatWon')
         document.querySelector('#square5').classList.add('boxesThatWon')
         document.querySelector('#square7').classList.add('boxesThatWon')
-    } 
-} 
+    }
+}
 
-function increaseWinners1 () {
-    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('111')) {
+function increaseWinners1() {
+    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) + copyOfScoreTrack.at(3) == ('111')) {
         document.querySelector('#square1').classList.add('boxesThatWon')
         document.querySelector('#square2').classList.add('boxesThatWon')
         document.querySelector('#square3').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('111')) {
+    } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(6) == ('111')) {
         document.querySelector('#square4').classList.add('boxesThatWon')
         document.querySelector('#square5').classList.add('boxesThatWon')
         document.querySelector('#square6').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('111')) {
+    } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) + copyOfScoreTrack.at(9) == ('111')) {
         document.querySelector('#square7').classList.add('boxesThatWon')
         document.querySelector('#square8').classList.add('boxesThatWon')
         document.querySelector('#square9').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('111')) {
+    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) + copyOfScoreTrack.at(7) == ('111')) {
         document.querySelector('#square1').classList.add('boxesThatWon')
         document.querySelector('#square4').classList.add('boxesThatWon')
         document.querySelector('#square7').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('111')) {
+    } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(8) == ('111')) {
         document.querySelector('#square2').classList.add('boxesThatWon')
         document.querySelector('#square5').classList.add('boxesThatWon')
         document.querySelector('#square8').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('111')) {
+    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) + copyOfScoreTrack.at(9) == ('111')) {
         document.querySelector('#square3').classList.add('boxesThatWon')
         document.querySelector('#square6').classList.add('boxesThatWon')
         document.querySelector('#square9').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('111')) {
+    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(9) == ('111')) {
         document.querySelector('#square1').classList.add('boxesThatWon')
         document.querySelector('#square5').classList.add('boxesThatWon')
         document.querySelector('#square9').classList.add('boxesThatWon')
-    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('111')) {
+    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) + copyOfScoreTrack.at(7) == ('111')) {
         document.querySelector('#square3').classList.add('boxesThatWon')
         document.querySelector('#square5').classList.add('boxesThatWon')
         document.querySelector('#square7').classList.add('boxesThatWon')
-    } 
+    }
 } 

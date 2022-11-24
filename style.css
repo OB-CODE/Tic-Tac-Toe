@@ -50,9 +50,13 @@ header {
 .turn {
     text-align: center;
     font-size: 2rem;
+    padding-bottom: 20px;
 }
 #showSymbol {
     display: inline-block;
+    height: 80px;
+    width: 80px;
+    margin: 0;
 }
 
 body {		
@@ -94,14 +98,14 @@ main{
     font-size: 1.5rem;
     padding-bottom: 40px;
 }
-.sym1 {
+/* .sym1 {
     text-align: center;
     background-image: url(./images/cross-mark_274c.png);
     background-size: 100% 100%;
     height: 40px;
     width: 40px;
     margin: 0 auto;
-}
+} */
 
 #playerImg1 {
     height: 200px;
@@ -113,14 +117,14 @@ main{
     font-size: 1.5rem;
     padding-bottom: 40px;
 }
-.sym2 {
+/* .sym2 {
     margin: 0 auto;
     text-align: center;
     background-image: url(./images/hollow-red-circle_2b55.png);
     background-size: 100% 100%;
     height: 40px;
     width: 40px;
-}
+} */
 
 #playerImg2 {
     height: 200px;
@@ -153,10 +157,13 @@ footer {
     width: 80%;
     margin: 0 auto;
 }
-.result {
+#result {
     text-align: center;
     padding-bottom: 20px;
-    font-size: 3rem;
+    font-size: 5rem;
+    color: aliceblue;
+    -webkit-text-stroke: 5px black;
+    font-weight: 800;
 }
 
 .butContainer {
@@ -205,6 +212,18 @@ footer {
     background-size: 100% 100%;
 }
 
+.addPlayer1election {
+    margin: 10px;
+    background-image: url(./images/scomo.png);
+    background-size: 100% 100%;
+}
+
+.addPlayer2election {
+    margin: 10px;
+    background-image: url(./images/Albo\ copy.png);
+    background-size: 100% 100%;
+}
+
 .draw {
     background-image: url(./images/its\ a\ draw\ text.gif);
     background-size: 100% 100%;
@@ -213,13 +232,24 @@ footer {
     text-align: center;
 }
 .invis {
-    color: transparent;
+    color: transparent!important;
     text-align: center;
+    -webkit-text-stroke: 0!important;
 }
 .footerStandardBack {
     background-image: url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80);
     background-size: 100% 100%;
 }
+.footerRVBBack {
+    background-image: url(./images/rvbmap.webp);
+    background-size: 100% 100%;
+}
+.footerElectionBack {
+    background-image: url(./images/phouse.jpeg);
+    background-size: 100% 100%;
+    opacity: 0.8;
+}
+
 .boxesThatWon {
     transform: scale(1.2);
     background-color: #F5B3DA!important;

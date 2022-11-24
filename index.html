@@ -9,14 +9,16 @@
  
 </head>
 <body>
+
+    <div class="options">
+        <span id="style1" class="classic"> Classic</span>
+        <span id="style2" class="rvb">Red vs Blue</span>
+        <span id="style3" class="ausElection">Election</span>
+    </div>
     <header>
-        <div class="options">
-            <span id="style1" class="classic"> Classic</span>
-            <span id="style2" class="rvb">Red vs Blue</span>
-            <span id="style3" class="ausElection">Election</span>
-        </div>
+        
         <h1 class="title">Tic Tac Toe</h1>
-        <div class="turn">It's <div id="showSymbol" class="sym1"></div>'s turn</div>
+        <div class="turn">It's <div id="showSymbol" class="addPlayer1"></div>'s turn</div>
     </header>
 
     <main>
@@ -48,7 +50,7 @@
 
     <footer>
         <div class="lowerContainer">
-            <div class="result">Player <div id="winner"> ? </div> won</div>
+            <div id="result">Player <div id="winner">  </div> won</div>
             <div class="butContainer">
                 <div class="clickPlayAgain">Play again</div>
                 <div class="clickResetScore">Reset scores</div>

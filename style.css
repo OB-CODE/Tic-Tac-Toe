@@ -11,13 +11,16 @@ header {
 }
 @keyframes colorChange {
     0% {
-        background-color: rgb( 255, 233, 173);
+        background-color: rgb(109, 188, 245);
     }
-    50% {
-        background-color: rgb(246, 166, 234);
+    30% {
+        background-color: rgb(242, 199, 124);
+    }
+    60% {
+        background-color: rgb(245, 57, 207);
     }
     100% {
-        background-color: rgb( 255, 233, 173);
+        background-color: rgb(109, 188, 245);
     }
 }
 
@@ -115,7 +118,6 @@ main{
     justify-content: center;
     margin: 0 auto;
     text-align: center;
-    padding-top: 100px;
     border: 1px solid black;
     /* color: transparent; */
     background-color: rgb(211, 197, 252);
@@ -151,8 +153,8 @@ footer {
 #winner {
     padding: 80px;
     display: inline-block;
-    border: 1px solid black;
     color: transparent;
+    border-bottom: 1px solid black;
 }
 /* CLASSES USED WITH JS DOM - Under here */
 
@@ -162,6 +164,7 @@ footer {
 }
 
 .addPlayer2 {
+    margin: 10px;
     background-image: url(./images/o\ t\ back.png);
     background-size: 100% 100%;
 }
@@ -180,6 +183,10 @@ footer {
     background-image: url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80);
     background-size: 100% 100%;
 }
+.boxesThatWon {
+    transform: scale(1.2);
+    background-color: #F5B3DA!important;
+}
 
 /* Hover CSS */
 
@@ -191,5 +198,4 @@ footer {
     transform: scale(1.2);
     transition: 1.5s;
     transition:cubic-bezier(0.075, 0.82, 0.165, 1);
-    
 }

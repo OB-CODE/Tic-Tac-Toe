@@ -41,7 +41,7 @@ https://ob-code.github.io/Tic-Tac-Toe/
 - FIXED :sunglasses: "player [] won" still shows the winner from the previous game even when play again and reset buttons are clicked. 
 - FIXED :sunglasses: Need to stop game from registering clicks once winner declared. 
 - FIXED :sunglasses: Clicking on the .gameContainer changes the background - need to turn this feature off. 
-- :grey_question: Show the winning combo by changing those squares in some way.
+- FIXED :sunglasses: Show the winning combo by changing those squares in some way.
 
 
 ---
@@ -50,6 +50,7 @@ https://ob-code.github.io/Tic-Tac-Toe/
 - .at() = a very useful method and far less complex than splice and slice. 
 - .gameContainer > div:hover { in CSS: The child combinator (>) is placed between two CSS selectors. It matches only those elements matched by the second selector that are the direct children of elements matched by the first.
 - https://color.adobe.com/create/color-wheel Great website for looking at colour values. 
+
 ---
 ## :white_check_mark: Cool things I would add if I can keep working on this
 - Computer logic to vs player.

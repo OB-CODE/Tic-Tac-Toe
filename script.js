@@ -45,6 +45,7 @@ allSquares.addEventListener('click', function (event) {
                 check2 ()
                 checkDraw ()
                 changeTurnSym ()
+                increaseWinners2 ()
             } 
         }
     } 
@@ -60,6 +61,7 @@ allSquares.addEventListener('click', function (event) {
                 check1()
                 checkDraw ()
                 changeTurnSym ()
+                increaseWinners1 ()
         }
 
     }
@@ -160,3 +162,77 @@ document.querySelector('#playerImg2').classList.add('addPlayer2')
 // let copyOfScoreTrack = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] // use this to manipulate in event listener code. 
     // numbbers now include 0 to make my maths easier :D
     //2. Storing the choice as a 'var combo' DOES NOT WORK - I think it captures the slice at the start and does not keep it upto date.
+
+
+// Make a function to work out the winning comobo to increase winning box size:
+function increaseWinners2 () {
+    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('222')) {
+        document.querySelector('#square1').classList.add('boxesThatWon')
+        document.querySelector('#square2').classList.add('boxesThatWon')
+        document.querySelector('#square3').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('222')) {
+        document.querySelector('#square4').classList.add('boxesThatWon')
+        document.querySelector('#square5').classList.add('boxesThatWon')
+        document.querySelector('#square6').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('222')) {
+        document.querySelector('#square7').classList.add('boxesThatWon')
+        document.querySelector('#square8').classList.add('boxesThatWon')
+        document.querySelector('#square9').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('222')) {
+        document.querySelector('#square1').classList.add('boxesThatWon')
+        document.querySelector('#square4').classList.add('boxesThatWon')
+        document.querySelector('#square7').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('222')) {
+        document.querySelector('#square2').classList.add('boxesThatWon')
+        document.querySelector('#square5').classList.add('boxesThatWon')
+        document.querySelector('#square8').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('222')) {
+        document.querySelector('#square3').classList.add('boxesThatWon')
+        document.querySelector('#square6').classList.add('boxesThatWon')
+        document.querySelector('#square9').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('222')) {
+        document.querySelector('#square1').classList.add('boxesThatWon')
+        document.querySelector('#square5').classList.add('boxesThatWon')
+        document.querySelector('#square9').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('222')) {
+        document.querySelector('#square3').classList.add('boxesThatWon')
+        document.querySelector('#square5').classList.add('boxesThatWon')
+        document.querySelector('#square7').classList.add('boxesThatWon')
+    } 
+} 
+
+function increaseWinners1 () {
+    if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(2) +copyOfScoreTrack.at(3) == ('111')) {
+        document.querySelector('#square1').classList.add('boxesThatWon')
+        document.querySelector('#square2').classList.add('boxesThatWon')
+        document.querySelector('#square3').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(4) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(6) == ('111')) {
+        document.querySelector('#square4').classList.add('boxesThatWon')
+        document.querySelector('#square5').classList.add('boxesThatWon')
+        document.querySelector('#square6').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(7) + copyOfScoreTrack.at(8) +copyOfScoreTrack.at(9) == ('111')) {
+        document.querySelector('#square7').classList.add('boxesThatWon')
+        document.querySelector('#square8').classList.add('boxesThatWon')
+        document.querySelector('#square9').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(4) +copyOfScoreTrack.at(7) == ('111')) {
+        document.querySelector('#square1').classList.add('boxesThatWon')
+        document.querySelector('#square4').classList.add('boxesThatWon')
+        document.querySelector('#square7').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(2) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(8) == ('111')) {
+        document.querySelector('#square2').classList.add('boxesThatWon')
+        document.querySelector('#square5').classList.add('boxesThatWon')
+        document.querySelector('#square8').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(6) +copyOfScoreTrack.at(9) == ('111')) {
+        document.querySelector('#square3').classList.add('boxesThatWon')
+        document.querySelector('#square6').classList.add('boxesThatWon')
+        document.querySelector('#square9').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(1) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(9) == ('111')) {
+        document.querySelector('#square1').classList.add('boxesThatWon')
+        document.querySelector('#square5').classList.add('boxesThatWon')
+        document.querySelector('#square9').classList.add('boxesThatWon')
+    } if (copyOfScoreTrack.at(3) + copyOfScoreTrack.at(5) +copyOfScoreTrack.at(7) == ('111')) {
+        document.querySelector('#square3').classList.add('boxesThatWon')
+        document.querySelector('#square5').classList.add('boxesThatWon')
+        document.querySelector('#square7').classList.add('boxesThatWon')
+    } 
+} 

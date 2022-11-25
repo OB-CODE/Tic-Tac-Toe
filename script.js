@@ -7,6 +7,7 @@ let whoTurn = 1
 let winner = false
 let gameStyle = 1
 let gameStyleContainer = document.querySelector('.options')
+let computerPlayer = false
 
 // set defaults:
 document.querySelector('#playerImg1').classList.add('addPlayer1')
@@ -115,27 +116,31 @@ allSquares.addEventListener('click', function (event) {
     console.log(parseInt(event.target.textContent))
     if (winner == false) {
         if (whoTurn % 2 === 0) {
-            if (eachSquare.classList.value == '') {
-                if (gameStyle == 1) {
+            
+            if (computerPlayer == false) {
+                if (eachSquare.classList.value == '') {
+                    if (gameStyle == 1) {
                     eachSquare.classList.add('addPlayer2')
-                } if (gameStyle == 2) {
+                    } if (gameStyle == 2) {
                     eachSquare.classList.add('addPlayer2rvb')
-                } if (gameStyle == 3) {
+                 } if (gameStyle == 3) {
                     eachSquare.classList.add('addPlayer2election')
-                } if (gameStyle == 4) {
+                    } if (gameStyle == 4) {
                     eachSquare.classList.add('addPlayer2GoneFishing')
-                } 
+                 } 
                 let j = event.target.textContent
-                console.log(parseInt(j)) // working now use this number to change score Array
+                // console.log(parseInt(j)) // working now use this number to change score Array
                 copyOfScoreTrack.splice((j), 1, '2')
                 console.log(copyOfScoreTrack)
+                }
+            }
                 whoTurn++
-                console.log(whoTurn)
+                // console.log(whoTurn)
                 check2()
                 checkDraw()
                 changeTurnSym()
                 increaseWinners2()
-            }
+            
         }
     }
     if (winner == false) {
@@ -151,17 +156,27 @@ allSquares.addEventListener('click', function (event) {
             } 
             eachSquare.classList.add('addPlayer1')
             let k = event.target.textContent
-            console.log(parseInt(k))
+            // console.log(parseInt(k))
             copyOfScoreTrack.splice((k), 1, '1')
             console.log(copyOfScoreTrack)
             whoTurn++
-            console.log(whoTurn)
+            // console.log(whoTurn)
             check1()
             checkDraw()
             changeTurnSym()
             increaseWinners1()
-        }
-
+            if (computerPlayer == true) {
+                compMaths ()
+                // console.log(whoTurn)
+                check2()
+                checkDraw()
+                changeTurnSym()
+                increaseWinners2()
+                whoTurn++
+                document.querySelector('div #showSymbol').removeAttribute('class')
+                checkGameStyleOnButtonClickAndChangeTopSymbol ()        
+            }
+    }
     }
 })
 
@@ -390,6 +405,128 @@ function increaseWinners1() {
 } 
 
 // computer maths:
+// make a look to check what is still 0
 
-copyOfScoreTrack
+// if (copyOfScoreTrack.at(6) == 0) {
+//     copyOfScoreTrack.splice((j), 1, '2')
+// }
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+}
 
+// old maths code:
+function compMaths () {
+    let compMoveFound = false
+    ranNum = getRandomInt(1,(10))
+    // console.log(ranNum)
+    for (let i = 0; i < 1000; i++) {
+        ranNum = getRandomInt(1,(10))
+        console.log(ranNum)
+        if (copyOfScoreTrack.at(ranNum) == 0 ) {
+            console.log('hi')
+            copyOfScoreTrack.splice((ranNum), 1, '2')
+            if (gameStyle == 1) {
+                document.querySelector(`#square${(ranNum)}`).classList.add('addPlayer2')
+                {break}
+            } else if (gameStyle == 2) {
+                document.querySelector(`#square${(ranNum)}`).classList.add('addPlayer2rvb')
+                {break}
+            } else if (gameStyle == 3) {
+                document.querySelector(`#square${(ranNum)}`).classList.add('addPlayer2election')
+                {break}
+            } else if (gameStyle == 4) {
+                document.querySelector(`#square${(ranNum)}`).classList.add('addPlayer2GoneFishing')
+                {break}
+            }
+        }
+    }
+}
+    
+
+    
+    // copyOfScoreTrack.at(ranNum) == 0
+    // for (let i = 10; i > 0; i--) {
+    //     let ranNum = getRandomInt(1,(10))
+    //         console.log(ranNum)
+    // }
+    //         console.log(checkRemaining)
+    //         if (checkRemaining == 0) {
+    //             console.log('Need to change index K as comp choice')
+    //             copyOfScoreTrack.splice((j), 1, '2')
+    //             if (gameStyle == 1) {
+    //                 document.querySelector(`#square${(i)}`).classList.add('addPlayer2')
+    //                 {break}
+    //             } else if (gameStyle == 2) {
+    //                 document.querySelector(`#square${(i)}`).classList.add('addPlayer2rvb')
+    //                 {break}
+    //             } else if (gameStyle == 3) {
+    //                 document.querySelector(`#square${(i)}`).classList.add('addPlayer2election')
+    //                 {break}
+    //             } else if (gameStyle == 4) {
+    //                 document.querySelector(`#square${(i)}`).classList.add('addPlayer2GoneFishing')
+    //                 {break}
+    //         }
+    //     }
+
+        
+    
+    // if (gameStyle == 1) {
+    //             if (j == 1 && copyOfScoreTrack.at(1) == 0) {
+    //                 document.querySelector('#square1').classList.add('addPlayer2')
+    //             } if (j == 2 && copyOfScoreTrack.at(2) == 0) {
+    //                 document.querySelector('#square2').classList.add('addPlayer2')
+    //             } if (j == 3 && copyOfScoreTrack.at(3) == 0) {
+    //                 document.querySelector('#square3').classList.add('addPlayer2')
+    //             } if (j == 4 && copyOfScoreTrack.at(4) == 0) {
+    //                 document.querySelector('#square4').classList.add('addPlayer2')
+    //             } if (j == 5 && copyOfScoreTrack.at(5) == 0) {
+    //                 document.querySelector('#square5').classList.add('addPlayer2')
+    //             } if (j == 6 && copyOfScoreTrack.at(6) == 0) {
+    //                 document.querySelector('#square6').classList.add('addPlayer2')
+    //             } if (j == 7 && copyOfScoreTrack.at(7) == 0) {
+    //                 document.querySelector('#square7').classList.add('addPlayer2')
+    //             } if (j == 8 && copyOfScoreTrack.at(8) == 0) {
+    //                 document.querySelector('#square8').classList.add('addPlayer2')
+    //             } if (j == 9 && copyOfScoreTrack.at(9) == 0) {
+    //                 document.querySelector('#square9').classList.add('addPlayer2')
+    //             }
+    //         }
+
+
+
+
+        
+
+
+
+        
+//         } if (gameStyle == 2) {
+//             eachSquare.classList.add('addPlayer2rvb')
+//         } if (gameStyle == 3) {
+//             eachSquare.classList.add('addPlayer2election')
+//         } if (gameStyle == 4) {
+//             eachSquare.classList.add('addPlayer2GoneFishing')
+//         } 
+        
+//         break
+//     }
+// }  
+// }
+
+// if (gameStyle == 1) {
+//     eachSquare.classList.add('addPlayer2')
+// } if (gameStyle == 2) {
+//     eachSquare.classList.add('addPlayer2rvb')
+// } if (gameStyle == 3) {
+//     eachSquare.classList.add('addPlayer2election')
+// } if (gameStyle == 4) {
+//     eachSquare.classList.add('addPlayer2GoneFishing')
+// } 
+
+// comp maths works at this point and changes text. 
+
+
+
+// find the first 0 and replace it with 2 + change the propert image

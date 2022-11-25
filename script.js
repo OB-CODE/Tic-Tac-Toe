@@ -231,13 +231,41 @@ function checkDraw() {
     }
 }
 
+// vs computer button:
+let vsComputer = document.querySelector('.clickPlayComputer')
+vsComputer.addEventListener('click', function (event) {
+    if (computerPlayer == true ) {
+        computerPlayer = false
+    } else computerPlayer = true
+    console.log(computerPlayer)
+    // All working at this point - I just want the computer to also rest scores so I have added the reset code here:
+    if (document.querySelector('#winner').classList.value == 'draw') {
+        document.querySelector('#winner').removeAttribute('class')
+        document.querySelector('#winner').classList.replace('draw', 'invis')
+        document.querySelector('div.invis').classList.replace('invis', 'result')
+    }
+    document.querySelector('#winner').removeAttribute('class')
+    winner = false
+    whoTurn = 1
+    setScore1.textContent = 0
+    document.querySelector('.score1').textContent = 0
+    setScore2.textContent = 0
+    document.querySelector('.score2').textContent = 0
+    document.querySelector('div #showSymbol').removeAttribute('class')
+    checkGameStyleOnButtonClickAndChangeTopSymbol ()
+    children = allSquares.querySelectorAll(':scope > div')
+    for (let i = 0; 0 < 9; i++) {
+        children[i].removeAttribute('class')
+        copyOfScoreTrack[(i + 1)] = '0'
+    }
+})
 
 // Play again button
 let playAgain = document.querySelector('.clickPlayAgain')
 playAgain.addEventListener('click', function (event) {
     if (winner == false) {
         console.log('no play again until winner declared')
-    } if (winner == true) {
+    } if (winner == true || copyOfScoreTrack.slice(1).sort().shift() != 0) {
     document.querySelector('div#result').removeAttribute('class')
     gameStyleChange ()
     document.querySelector('#winner').classList.replace('draw', 'invis')
@@ -445,88 +473,3 @@ function compMaths () {
 }
     
 
-    
-    // copyOfScoreTrack.at(ranNum) == 0
-    // for (let i = 10; i > 0; i--) {
-    //     let ranNum = getRandomInt(1,(10))
-    //         console.log(ranNum)
-    // }
-    //         console.log(checkRemaining)
-    //         if (checkRemaining == 0) {
-    //             console.log('Need to change index K as comp choice')
-    //             copyOfScoreTrack.splice((j), 1, '2')
-    //             if (gameStyle == 1) {
-    //                 document.querySelector(`#square${(i)}`).classList.add('addPlayer2')
-    //                 {break}
-    //             } else if (gameStyle == 2) {
-    //                 document.querySelector(`#square${(i)}`).classList.add('addPlayer2rvb')
-    //                 {break}
-    //             } else if (gameStyle == 3) {
-    //                 document.querySelector(`#square${(i)}`).classList.add('addPlayer2election')
-    //                 {break}
-    //             } else if (gameStyle == 4) {
-    //                 document.querySelector(`#square${(i)}`).classList.add('addPlayer2GoneFishing')
-    //                 {break}
-    //         }
-    //     }
-
-        
-    
-    // if (gameStyle == 1) {
-    //             if (j == 1 && copyOfScoreTrack.at(1) == 0) {
-    //                 document.querySelector('#square1').classList.add('addPlayer2')
-    //             } if (j == 2 && copyOfScoreTrack.at(2) == 0) {
-    //                 document.querySelector('#square2').classList.add('addPlayer2')
-    //             } if (j == 3 && copyOfScoreTrack.at(3) == 0) {
-    //                 document.querySelector('#square3').classList.add('addPlayer2')
-    //             } if (j == 4 && copyOfScoreTrack.at(4) == 0) {
-    //                 document.querySelector('#square4').classList.add('addPlayer2')
-    //             } if (j == 5 && copyOfScoreTrack.at(5) == 0) {
-    //                 document.querySelector('#square5').classList.add('addPlayer2')
-    //             } if (j == 6 && copyOfScoreTrack.at(6) == 0) {
-    //                 document.querySelector('#square6').classList.add('addPlayer2')
-    //             } if (j == 7 && copyOfScoreTrack.at(7) == 0) {
-    //                 document.querySelector('#square7').classList.add('addPlayer2')
-    //             } if (j == 8 && copyOfScoreTrack.at(8) == 0) {
-    //                 document.querySelector('#square8').classList.add('addPlayer2')
-    //             } if (j == 9 && copyOfScoreTrack.at(9) == 0) {
-    //                 document.querySelector('#square9').classList.add('addPlayer2')
-    //             }
-    //         }
-
-
-
-
-        
-
-
-
-        
-//         } if (gameStyle == 2) {
-//             eachSquare.classList.add('addPlayer2rvb')
-//         } if (gameStyle == 3) {
-//             eachSquare.classList.add('addPlayer2election')
-//         } if (gameStyle == 4) {
-//             eachSquare.classList.add('addPlayer2GoneFishing')
-//         } 
-        
-//         break
-//     }
-// }  
-// }
-
-// if (gameStyle == 1) {
-//     eachSquare.classList.add('addPlayer2')
-// } if (gameStyle == 2) {
-//     eachSquare.classList.add('addPlayer2rvb')
-// } if (gameStyle == 3) {
-//     eachSquare.classList.add('addPlayer2election')
-// } if (gameStyle == 4) {
-//     eachSquare.classList.add('addPlayer2GoneFishing')
-// } 
-
-// comp maths works at this point and changes text. 
-
-
-
-// find the first 0 and replace it with 2 + change the propert image

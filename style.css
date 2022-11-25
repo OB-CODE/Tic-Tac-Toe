@@ -11,6 +11,7 @@
     padding: 20px;
     cursor: pointer;
     border-radius: 20px;
+    animation: colorChange 6s infinite;
 }
 .options {
     padding: 30px;
@@ -22,21 +23,21 @@
 header {
     width: 80%;
     margin: 0 auto;
-    background-color: rgb(255, 233, 173);
-    animation: colorChange 6s infinite;
+    /* background-color: rgb(255, 233, 173);
+    animation: colorChange 6s infinite; */
 }
 @keyframes colorChange {
     0% {
-        background-color: rgb(109, 188, 245);
+        background-color: rgb(118, 190, 241);
     }
     30% {
-        background-color: rgb(242, 199, 124);
+        background-color: rgb(116, 248, 178);
     }
     60% {
-        background-color: rgb(245, 57, 207);
+        background-color: rgb(231, 104, 208);
     }
     100% {
-        background-color: rgb(109, 188, 245);
+        background-color: rgb(118, 190, 241);
     }
 }
 
@@ -85,7 +86,7 @@ main{
 }
 
 .leftCol {
-    background-color: rgb(250, 147, 96);
+    /* background-color: rgb(250, 147, 96); */
     width: 100%;
 }
 
@@ -131,7 +132,7 @@ main{
 }
 
 .rightCol {
-    background-color: rgb(144, 112, 250);
+    /* background-color: rgb(144, 112, 250); */
     width: 100%;
 }
 .score {
@@ -180,6 +181,7 @@ footer {
     padding: 20px;
     cursor: pointer;
     border-radius: 20px;
+    animation: colorChange2 6s infinite;
 }
 #winner {
     padding: 80px;
@@ -281,4 +283,19 @@ footer {
     transform: scale(1.2);
     transition: 1.5s;
     transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes colorChange2 {
+    0% {
+        background-color: rgb(53, 158, 233);
+    }
+    30% {
+        background-color: rgb(37, 175, 102);
+    }
+    60% {
+        background-color: rgb(241, 40, 204);
+    }
+    100% {
+        background-color: rgb(39, 159, 244);
+    }
 }
